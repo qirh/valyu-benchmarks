@@ -132,6 +132,7 @@ def run_perplexity(problem: str) -> tuple[str, float, dict]:
     client = OpenAI(
         api_key=os.getenv("PERPLEXITY_API_KEY"),
         base_url="https://api.perplexity.ai",
+        default_headers={"X-Pplx-Integration": "valyu-benchmarks"},
         timeout=3600,
     )
     start = time.time()
